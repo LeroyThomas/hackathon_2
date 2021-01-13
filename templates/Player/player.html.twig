@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bienvenue !{% endblock %}
+
+{% block body %}
+<div class="title">
+    <h1>The Wildest Match </h1>
+</div>
+    <div class="questionReponsePlayer">
+        <div class="questionRandomPlayer">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card-body" id="cardBodyPlayer">
+                        <h5 class="card-header">Question </h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="reponceChoice">
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action">Choix reponse 1</a>
+                <a href="#" class="list-group-item list-group-item-action">Choix reponse 2</a>
+                <a href="#" class="list-group-item list-group-item-action">Choix reponse 3</a>
+                <a href="#" class="list-group-item list-group-item-action " >Choix reponse 4</a>
+                <a href="#" class="list-group-item list-group-item-action " >Choix reponse 5</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

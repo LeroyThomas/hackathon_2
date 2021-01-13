@@ -1,7 +1,11 @@
 @import 'variables.scss';
 @import "~bootstrap/scss/bootstrap";
 
-
+@font-face {
+    font-family: 'Massenet';
+    src: url("MassenetBold-Bold.otf");
+}
+/*Accueil GameMaster*/
 body {
     background-color: #f1faee;
 }
@@ -27,6 +31,16 @@ body {
 
 .title {
     text-align: center;
+    font-family: 'Massenet';
+}
+
+/*Choix joueur*/
+
+.reponceChoice {
+    padding-top: 50px;
+}
+.list-group-item.list-group-item-action {
+    margin-top: 20px;
 }
 
 @media (min-width: 400px) {
@@ -45,5 +59,15 @@ body {
         display: flex;
         justify-content: center;
         padding-top: 100px;
+    }
+    .questionReponsePlayer {
+        display: flex;
+        padding-top: 80px;
+        justify-content: space-around;
+    }
+    #cardBodyPlayer.card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
     }
 }
