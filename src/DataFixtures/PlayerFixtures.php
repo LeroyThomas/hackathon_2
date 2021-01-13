@@ -24,6 +24,7 @@ class PlayerFixtures extends Fixture
         foreach (self::PLAYERS as $key => $playerName) {
         $player = new Player();
         $player->setName($playerName);
+        $player->setRoles(['ROLE_USER']);
 
         $manager->persist($player);
 
