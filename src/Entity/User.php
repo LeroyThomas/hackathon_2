@@ -2,14 +2,14 @@
 
 namespace App\Entity;
 
-use App\Repository\PlayerRepository;
+use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
- * @ORM\Entity(repositoryClass=PlayerRepository::class)
+ * @ORM\Entity(repositoryClass=UserRepository::class)
  */
-class Player implements UserInterface
+class User implements UserInterface
 {
     /**
      * @ORM\Id
