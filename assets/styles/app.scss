@@ -1,4 +1,49 @@
+@import 'variables.scss';
 @import "~bootstrap/scss/bootstrap";
+
+
 body {
-    background-color: lightgray;
+    background-color: #f1faee;
+}
+
+.questionRandom {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.createQuestion {
+    padding-top: 200px;
+}
+
+.col-sm-6 {
+    padding: 0;
+}
+.card-body {
+    padding-left: 30px;
+    border: black solid;
+    background-color: #a8dadc ;
+    margin-top: 50px;
+}
+
+.title {
+    text-align: center;
+}
+
+@media (min-width: 400px) {
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 300px;
+        height: 400px;
+        margin: 40px;
+    }
+    .createQuestion {
+        padding-top: 0px;
+    }
+    .questionRandom {
+        display: flex;
+        justify-content: center;
+        padding-top: 100px;
+    }
 }
