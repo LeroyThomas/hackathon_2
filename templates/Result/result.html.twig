@@ -13,7 +13,7 @@
                     <div class="card-body" id="cardBodyPlayer">
                         <h5 class="card-header">Question </h5>
                         <p class="card-text">
-                            {{ randQuestion[0].title }}
+                            {{ question.title }}
                         </p>
                     </div>
                 </div>
@@ -21,13 +21,9 @@
         </div>
         <div class="reponseChoice">
             <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action">Reponse Joueur 1</a>
-                <a href="#" class="list-group-item list-group-item-action">Reponse Joueur 2</a>
-                <a href="#" class="list-group-item list-group-item-action">Reponse Joueur 3</a>
-                <a href="#" class="list-group-item list-group-item-action " >Reponse Joueur 4</a>
-                <a href="#" class="list-group-item list-group-item-action " >Reponse Joueur 5</a>
+                {% for %}
+                <div class="list-group-item list-group-item-action">Reponse Joueur 1</div>
             </div>
         </div>
-    </div>
     </div>
 {% endblock %}
