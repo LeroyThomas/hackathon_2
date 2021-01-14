@@ -8,7 +8,7 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
 
-class PlayerFixtures extends Fixture
+class UserFixtures extends Fixture
 {
     const PLAYERS = [
         "Titi",
