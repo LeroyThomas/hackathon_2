@@ -19,7 +19,11 @@
                 <div class="col-sm-6">
                         <div class="card-body">
                             <h5 class="card-header">Crée ta question</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            <p class="card-text">
+                                {{ form_start(form) }}
+                                {{ form_row(form.title, {'label': ' '}) }}
+                                {{ form_end(form) }}
+                                </p>
                             <a href="#" class="btn btn-blueButton">Start Game</a>
                         </div>
                 </div>
