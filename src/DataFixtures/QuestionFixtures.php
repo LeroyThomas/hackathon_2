@@ -33,7 +33,8 @@ class QuestionFixtures extends Fixture
         "Un truc à faire une fois dans sa vie, c'est ___ mais seulement une fois",
         "___, trankilou bilou",
         "Ton plus beau souvenir c'est ___",
-        "Hier soir, belle maman m'a parlé de ___"
+        "Hier soir, belle maman m'a parlé de ___",
+        "Papa, c'est quoi ____ ?"
     ];
 
     public function load(ObjectManager $manager)
