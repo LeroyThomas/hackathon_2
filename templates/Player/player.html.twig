@@ -12,20 +12,16 @@
                 <div class="col-sm-6">
                     <div class="card-body" id="cardBodyPlayer">
                         <h5 class="card-header">Question </h5>
-                        <p class="card-text">
-
-                        </p>
+                        <p class="card-text">{{ question.title }}</p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="reponseChoice">
             <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action">Choix reponse 1</a>
-                <a href="#" class="list-group-item list-group-item-action">Choix reponse 2</a>
-                <a href="#" class="list-group-item list-group-item-action">Choix reponse 3</a>
-                <a href="#" class="list-group-item list-group-item-action " >Choix reponse 4</a>
-                <a href="#" class="list-group-item list-group-item-action " >Choix reponse 5</a>
+                {% for answer in randAnswers %}
+                <a href="#" class="list-group-item list-group-item-action">{{ answer.title }}</a>
+                {% endfor %}
             </div>
         </div>
     </div>
