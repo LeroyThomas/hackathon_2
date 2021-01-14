@@ -4,6 +4,9 @@
 
 {% block body %}
     <div class="container">
+        <div class="title">
+            <h1>The Wildest Match </h1>
+        </div>git add
         <form class="login-form" method="post">
             {% if error %}
                 <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
