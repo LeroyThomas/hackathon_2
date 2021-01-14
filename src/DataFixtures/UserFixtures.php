@@ -16,7 +16,13 @@ class UserFixtures extends Fixture
         "Toto",
         "Fraise",
         "Pomme",
-        "Azerty"
+        "Azerty",
+        "Banane",
+        "Cowabunga",
+        "Donatello",
+        "Leonardo",
+        "Raphael",
+        "Michelangelo",
     ];
 
     public function load(ObjectManager $manager)
