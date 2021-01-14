@@ -7,7 +7,23 @@
 }
 /*Accueil GameMaster*/
 body {
-    background-color: #f1faee;
+    background-color: #006d77;
+}
+
+//timer
+.timerContainer {
+    text-align: center;
+}
+
+#timer {
+    display: inline-block;
+    text-align: center;
+    justify-content: center;
+    margin: 0;
+    font-size: 50px;
+    height: 70px;
+    width: 500px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .questionRandom {
@@ -25,7 +41,7 @@ body {
 .card-body {
     padding-left: 30px;
     border: black solid;
-    background-color: #a8dadc ;
+    background-color: #e76f51 ;
     margin-top: 50px;
 }
 

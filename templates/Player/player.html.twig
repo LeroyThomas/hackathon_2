@@ -6,7 +6,8 @@
 <div class="title">
     <h1>The Wildest Match </h1>
 </div>
-    <div class="questionReponsePlayer" onload="play()">
+    <div class="timerContainer"><p id='timer'></p></div>
+    <div class="questionReponsePlayer">
         <div class="questionRandomPlayer">
             <div class="row">
                 <div class="col-sm-6">
@@ -20,13 +21,30 @@
         <div class="reponseChoice">
             <div class="list-group">
                 {% for answer in randAnswers %}
-                <a href="#" class="list-group-item list-group-item-action">{{ answer.title }}</a>
+                <a href="{{ path('result', {questionId:question.id, answerId:answer.id}) }}" id="playerAnswer" class="list-group-item list-group-item-action">{{ answer.title }}</a>
                 {% endfor %}
             </div>
         </div>
     </div>
 </div>
 {% endblock %}
+{#{% block javascripts %}#}
+{#    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>#}
+{#    <script src="https://js.pusher.com/7.0/pusher.min.js"></script>#}
+{#    <script>#}
+{#        const pusher = new Pusher('ad51b741b37252cba3b1', {#}
+{#            cluster: 'eu'#}
+{#        });#}
+{#        const channel = pusher.subscribe('general');#}
+{#        channel.bind('selectAnswer', function(answerid) {#}
+{#            let url = "{{ path('result', {id:"_answerid_"})}}";#}
+{#            window.location.assign(url.replace("_answerid_", answerid));#}
+{#        });#}
+{#        $('#playerAnswer').click(function () {#}
+{#            $.post("{{ path('start_game') }}");#}
+{#        });#}
+{#    </script>#}
+{#{% endblock %}#}
 {% block javascripts %}
 {{ parent() }}
     <script>

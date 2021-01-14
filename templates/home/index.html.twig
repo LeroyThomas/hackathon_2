@@ -6,13 +6,14 @@
     <div class="title">
         <h1>The Wildest Match </h1>
     </div>
+
     <div class="questionRandom">
         <div class="row">
             <div class="col-sm-6">
-                    <div class="card-body" >
-                        <h5 class="card-header">Question Aléatoire</h5>
-                        <a href="#" id="btn-start" class="btn btn-blueButton">Start Game</a>
-                    </div>
+                <div class="card-body" >
+                    <h5 class="card-header">Question Aléatoire</h5>
+                    <a href="#" id="btn-start" class="btn btn-blueButton">Start Game</a>
+                </div>
             </div>
             <div class="createQuestion">
                 <div class="col-sm-6">
@@ -22,7 +23,7 @@
                             {{ form_start(form) }}
                             {{ form_row(form.title, {'label': ' '}) }}
                             {{ form_end(form) }}
-                            </p>
+                        </p>
                         <a href="#" class="btn btn-blueButton">Start Game</a>
                     </div>
                 </div>
@@ -53,4 +54,5 @@
             $.post("{{ path('start_game') }}");
         });
     </script>
+
 {% endblock %}
