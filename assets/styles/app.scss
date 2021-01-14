@@ -36,7 +36,7 @@ body {
 
 /*Choix joueur*/
 
-.reponceChoice {
+.reponseChoice {
     padding-top: 50px;
 }
 .list-group-item.list-group-item-action {
@@ -69,5 +69,17 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
+    }
+    .choixDessus {
+        display: flex;
+        flex-direction: row;
+    }
+    .choixDessous {
+        display: flex;
+        flex-direction: row;
+    }
+    .choixMilieu {
+        padding-top: 20px;
+        padding-bottom: 20px;
     }
 }
