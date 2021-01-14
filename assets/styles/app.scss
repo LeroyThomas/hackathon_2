@@ -1,4 +1,24 @@
 @import "~bootstrap/scss/bootstrap";
 body {
     background-color: lightgray;
+    //background-color: black;
+    margin: 0;
+}
+
+//timer
+.timerContainer {
+    text-align: center;
+}
+
+#timer {
+    display: inline-block;
+    text-align: center;
+    justify-content: center;
+    margin: 0;
+    font-size: 50px;
+    height: 70px;
+    width: 200px;
+    font-family: 'Roboto', sans-serif;
+    background-color: lightgoldenrodyellow;
+
 }
