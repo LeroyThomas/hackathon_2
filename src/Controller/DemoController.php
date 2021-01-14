@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\QuestionRepository;
 use Pusher\Pusher;
 use Pusher\PusherException;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -24,9 +25,15 @@ class DemoController extends AbstractController
      * @return Response
      * @throws PusherException
      */
-    public function sayHello(Pusher $pusher): Response
+    public function sayHello(Pusher $pusher, QuestionRepository $questionRepository): Response
     {
-        $pusher->trigger('greetings', 'new-greeting', []);
+        $question = $questionRepository->createQueryBuilder('q')
+            ->orderBy('RAND()')
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getOneOrNullResult();
+
+        $pusher->trigger('greetings', 'new-greeting', $question->getId());
 
         return new Response();
     }

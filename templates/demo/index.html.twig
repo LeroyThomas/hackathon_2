@@ -15,7 +15,7 @@
         });
         const channel = pusher.subscribe('greetings');
         channel.bind('new-greeting', function() {
-            window.location.assign("https://www.w3schools.com");
+            window.location.assign("{{ path('result')}}");
         });
         $('#say-hello-button').click(function () {
             $.post("{{ path('demo_say_hello') }}");
