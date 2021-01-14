@@ -18,7 +18,7 @@ class QuestionFixtures extends Fixture
         "Un truc sympa à faire après le boulot, c'est ___",
         "Ce matin, une petite voix m'a réveillé en me disant ____",
         "Oui mon enfant, le prof pardonne tout, sauf ____",
-        "Vous allez me traiter de petite nature, mais à midi ___ m'a coupé l'appétit",
+        "Vous allez me traiter de petite nature, mais ___ il y a un quart d'heure m'a coupé l'appétit",
         "Un truc à faire dans sa vie, c'est ___. Mais seulement une fois",
         "Pour grand maitre jedi devenir___tu feras",
         "Il court il court, le ___",
@@ -33,7 +33,9 @@ class QuestionFixtures extends Fixture
         "Un truc à faire une fois dans sa vie, c'est ___ mais seulement une fois",
         "___, trankilou bilou",
         "Ton plus beau souvenir c'est ___",
-        "Hier soir, belle maman m'a parlé de ___"
+        "Hier soir, belle maman m'a parlé de ___",
+        "Papa, c'est quoi ____ ?",
+        "Père Noël, pour Noël je voudrais ____"
     ];
 
     public function load(ObjectManager $manager)
@@ -41,11 +43,8 @@ class QuestionFixtures extends Fixture
         foreach (self::QUESTIONS as $key => $questionTitle) {
             $question = new Question();
             $question->setTitle($questionTitle);
-
             $manager->persist($question);
-
         }
-
         $manager->flush();
     }
 
