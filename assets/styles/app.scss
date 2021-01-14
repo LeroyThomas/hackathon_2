@@ -1,4 +1,85 @@
+@import 'variables.scss';
 @import "~bootstrap/scss/bootstrap";
+
+@font-face {
+    font-family: 'Massenet';
+    src: url("MassenetBold-Bold.otf");
+}
+/*Accueil GameMaster*/
 body {
-    background-color: lightgray;
+    background-color: #f1faee;
+}
+
+.questionRandom {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.createQuestion {
+    padding-top: 200px;
+}
+
+.col-sm-6 {
+    padding: 0;
+}
+.card-body {
+    padding-left: 30px;
+    border: black solid;
+    background-color: #a8dadc ;
+    margin-top: 50px;
+}
+
+.title {
+    text-align: center;
+    font-family: 'Massenet';
+}
+
+/*Choix joueur*/
+
+.reponseChoice {
+    padding-top: 50px;
+}
+.list-group-item.list-group-item-action {
+    margin-top: 20px;
+}
+
+@media (min-width: 400px) {
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 300px;
+        height: 400px;
+        margin: 40px;
+    }
+    .createQuestion {
+        padding-top: 0px;
+    }
+    .questionRandom {
+        display: flex;
+        justify-content: center;
+        padding-top: 100px;
+    }
+    .questionReponsePlayer {
+        display: flex;
+        padding-top: 80px;
+        justify-content: space-around;
+    }
+    #cardBodyPlayer.card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .choixDessus {
+        display: flex;
+        flex-direction: row;
+    }
+    .choixDessous {
+        display: flex;
+        flex-direction: row;
+    }
+    .choixMilieu {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
 }
