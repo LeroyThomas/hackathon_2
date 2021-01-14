@@ -12,7 +12,7 @@ use App\Entity\Question;
 class PlayerController extends AbstractController
 {
     /**
-     * @Route("/player/{id}", name="player", methods={"GET","POST"})
+     * @Route("/player/{id}", name="player", methods={"GET"})
      */
     public function showAnswersChoice(Question $question): Response
     {
