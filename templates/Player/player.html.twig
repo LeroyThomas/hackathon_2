@@ -21,7 +21,7 @@
         <div class="reponseChoice">
             <div class="list-group">
                 {% for answer in randAnswers %}
-                <a href="{{ path('result', {questionId:question.id, answerId:answer.id}) }}" id="playerAnswer" class="list-group-item list-group-item-action">{{ answer.title }}</a>
+                <a href="{{ path('player_result', {userId:app.user.id, questionId:question.id, answerId:answer.id}) }}" id="playerAnswer" class="list-group-item list-group-item-action">{{ answer.title }}</a>
                 {% endfor %}
             </div>
         </div>

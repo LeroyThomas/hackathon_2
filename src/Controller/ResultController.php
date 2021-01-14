@@ -12,18 +12,14 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 class ResultController extends AbstractController
 {
     /**
-     * @Route("/result/{questionId}/{answerId}", name="result", methods={"GET"})
-     * @paramConverter("question", options={"mapping": {"questionId": "id"}})
-     * @paramConverter("answer", options={"mapping": {"answerId": "id"}})
+     * @Route("/result", name="result", methods={"GET"})
      * @param Question $question
      * @param Answer $answer
      * @return Response
      */
-    public function index(Question $question, Answer $answer): Response
+    public function index(): Response
     {
         return $this->render('Result/result.html.twig', [
-            'question'=>$question,
-            'answer'=>$answer,
         ]);
     }
 }
