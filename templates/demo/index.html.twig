@@ -13,12 +13,10 @@
         const pusher = new Pusher('ad51b741b37252cba3b1', {
             cluster: 'eu'
         });
-
         const channel = pusher.subscribe('greetings');
         channel.bind('new-greeting', function() {
             alert('Hello!');
         });
-
         $('#say-hello-button').click(function () {
             $.post("{{ path('demo_say_hello') }}");
         });
