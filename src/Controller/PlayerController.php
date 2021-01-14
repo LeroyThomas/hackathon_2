@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use Pusher\Pusher;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -29,5 +30,18 @@ class PlayerController extends AbstractController
             'randAnswers' => $randAnswers,
             'question' => $question
         ]);
+    }
+
+    /**
+     * @Route("/select-answer", name="select_answer", methods={"POST"})
+     * @param Pusher $pusher
+     * @return Response
+     * @throws \Pusher\PusherException
+     */
+    public function selectAnswer(Pusher $pusher): Response
+    {
+        $pusher->trigger('general','selectAnswer', []);
+
+        return new Response();
     }
 }

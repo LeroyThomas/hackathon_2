@@ -6,6 +6,9 @@
     src: url("MassenetBold-Bold.otf");
 }
 /*Accueil GameMaster*/
+body {
+    background-color: #006d77;
+}
 
 //timer
 .timerContainer {
@@ -38,7 +41,7 @@
 .card-body {
     padding-left: 30px;
     border: black solid;
-    background-color: #a8dadc ;
+    background-color: #e76f51 ;
     margin-top: 50px;
 }
 
