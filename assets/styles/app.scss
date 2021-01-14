@@ -6,16 +6,11 @@
     src: url("MassenetBold-Bold.otf");
 }
 /*Accueil GameMaster*/
-body {
-<<<<<<< HEAD
-    background-color: lightgray;
-    //background-color: black;
-    margin: 0;
-}
 
 //timer
 .timerContainer {
     text-align: center;
+    background-color: #f1faee;
 }
 
 #timer {
@@ -28,9 +23,6 @@ body {
     width: 200px;
     font-family: 'Roboto', sans-serif;
     background-color: lightgoldenrodyellow;
-
-=======
-    background-color: #f1faee;
 }
 
 .questionRandom {
@@ -105,5 +97,4 @@ body {
         padding-top: 20px;
         padding-bottom: 20px;
     }
->>>>>>> 4433a39a3382c0b939e32d8d8bb99737687a8063
 }
