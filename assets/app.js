@@ -16,12 +16,12 @@ const $ = require('jquery');
 require('bootstrap');
 
 // Timer Start
-const startingMinutes = 10;
+const startingMinutes = 1;
 let time = startingMinutes * 60;
 
 const countdownEl = document.getElementById('timer');
 
-setInterval(updateCountdown, 1000);
+let x = setInterval(updateCountdown, 1000);
 
 function updateCountdown() {
     const minutes = Math.floor(time / 60);
@@ -31,5 +31,10 @@ function updateCountdown() {
 
     countdownEl.innerHTML = `${minutes}: ${seconds}`;
     time--;
+
+    if (minutes <= 0 && seconds <= 0) {
+        clearInterval(x);
+        document.getElementById("timer").innerHTML = "TO LATE !";
+    }
 }
 // Timer End
