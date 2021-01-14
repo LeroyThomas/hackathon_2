@@ -38,3 +38,9 @@ services:
             $options:
                 cluster: '%env(PUSHER_CLUSTER)%'
                 useTLS: true
+
+doctrine:
+    orm:
+        dql:
+            numeric_functions:
+                rand: DoctrineExtensions\Query\Mysql\Rand
