@@ -6,6 +6,7 @@
     <div class="title">
         <h1>The Wildest Match </h1>
     </div>
+    <div class="timerContainer"><p id='timer'></p></div>
     <div class="questionRandom">
         <div class="row">
             <div class="col-sm-6">
@@ -32,6 +33,7 @@
 {% endblock %}
 
 {% block javascripts %}
+    {{ parent() }}
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
     <script>
@@ -47,4 +49,5 @@
             $.post("{{ path('start_game') }}");
         });
     </script>
+
 {% endblock %}
