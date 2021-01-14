@@ -30,3 +30,21 @@
         </div>
     </div>
 {% endblock %}
+
+{% block javascripts %}
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
+    <script>
+        const pusher = new Pusher('ad51b741b37252cba3b1', {
+            cluster: 'eu'
+        });
+        const channel = pusher.subscribe('general');
+        channel.bind('start-game', function(questionid) {
+            let url = "{{ path('player', {id:"_questionid_"})}}";
+            window.location.assign(url.replace("_questionid_", questionid));
+        });
+        $('#btn-start').click(function () {
+            $.post("{{ path('start_game') }}");
+        });
+    </script>
+{% endblock %}

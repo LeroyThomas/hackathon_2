@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use App\Entity\Question;
 use App\Form\QuestionType;
+use App\Repository\QuestionRepository;
+use Pusher\Pusher;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -43,5 +45,26 @@ class HomeController extends AbstractController
             'question'=>$question,
             'form'=>$form->createView(),
         ]);
+    }
+
+    /**
+     * @Route("/start-game", name="start_game", methods={"POST"})
+     * @param Pusher $pusher
+     * @param QuestionRepository $questionRepository
+     * @return Response
+     * @throws \Doctrine\ORM\NonUniqueResultException
+     * @throws \Pusher\PusherException
+     */
+    public function startGame(Pusher $pusher, QuestionRepository $questionRepository): Response
+    {
+        $question = $questionRepository->createQueryBuilder('q')
+            ->orderBy('RAND()')
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getOneOrNullResult();
+
+        $pusher->trigger('general', 'start-game', $question->getId());
+
+        return new Response();
     }
 }
