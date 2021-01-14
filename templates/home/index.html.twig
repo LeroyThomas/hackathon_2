@@ -6,7 +6,7 @@
     <div class="title">
         <h1>The Wildest Match </h1>
     </div>
-    <div class="questionRandom">
+    <div class="questionRandom" onload="play()">
         <div class="row">
             <div class="col-sm-6">
                     <div class="card-body" >
@@ -29,7 +29,6 @@
                 </div>
             </div>
         </div>
-        <button onclick="playSound();" id="soundBtn">Play</button>
         This friendly message is coming from:
         <ul>
             <li>Your controller at <code><a href="{{ '/home/leroy/Hackathon_2/hackathon_2/src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a></code></li>

@@ -1,4 +1,7 @@
 {
+    "beberlei/doctrineextensions": {
+        "version": "v1.3.0"
+    },
     "composer/package-versions-deprecated": {
         "version": "1.11.99.1"
     },
@@ -157,7 +160,10 @@
             "branch": "master",
             "version": "3.0",
             "ref": "8dd3ea817217453e14ab596317177465211e01d2"
-        }
+        },
+        "files": [
+            "./config/packages/pusher_php_server.yaml"
+        ]
     },
     "sensio/framework-extra-bundle": {
         "version": "5.2",

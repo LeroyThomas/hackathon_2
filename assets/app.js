@@ -14,15 +14,20 @@ const $ = require('jquery');
 // the bootstrap module doesn't export/return anything
 require('bootstrap');
 
+    const myMusic = new sound("/build/sounds/exploration-wind.wav");
+    myMusic.play();
 
-    document.getElementById('soundBtn').style.visibility='hidden';
-
-    function performSound(){
-    var soundButton = document.getElementById("soundBtn");
-    soundButton.click();
-}
-
-    function playSound() {
-    const audio = new Audio("/assets/sounds/exploration-wind.wav");
-    audio.play();
+function sound(src) {
+    this.sound = document.createElement("audio");
+    this.sound.src = src;
+    this.sound.setAttribute("preload", "auto");
+    this.sound.setAttribute("controls", "none");
+    this.sound.style.display = "none";
+    document.body.appendChild(this.sound);
+    this.play = function(){
+        this.sound.play();
+    }
+    this.stop = function(){
+        this.sound.pause();
+    }
 }
