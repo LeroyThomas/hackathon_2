@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\QuestionRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -22,6 +24,16 @@ class Question
      */
     private $title;
 
+    /**
+     * @ORM\OneToMany(targetEntity=ResultsGame::class, mappedBy="question")
+     */
+    private $resultsGames;
+
+    public function __construct()
+    {
+        $this->resultsGames = new ArrayCollection();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -35,6 +47,36 @@ class Question
     public function setTitle(string $title): self
     {
         $this->title = $title;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|ResultsGame[]
+     */
+    public function getResultsGames(): Collection
+    {
+        return $this->resultsGames;
+    }
+
+    public function addResultsGame(ResultsGame $resultsGame): self
+    {
+        if (!$this->resultsGames->contains($resultsGame)) {
+            $this->resultsGames[] = $resultsGame;
+            $resultsGame->setQuestion($this);
+        }
+
+        return $this;
+    }
+
+    public function removeResultsGame(ResultsGame $resultsGame): self
+    {
+        if ($this->resultsGames->removeElement($resultsGame)) {
+            // set the owning side to null (unless already changed)
+            if ($resultsGame->getQuestion() === $this) {
+                $resultsGame->setQuestion(null);
+            }
+        }
 
         return $this;
     }

@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -27,6 +29,16 @@ class User implements UserInterface
      * @ORM\Column(type="json")
      */
     private $roles = [];
+
+    /**
+     * @ORM\OneToMany(targetEntity=ResultsGame::class, mappedBy="user")
+     */
+    private $resultsGames;
+
+    public function __construct()
+    {
+        $this->resultsGames = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -97,5 +109,35 @@ class User implements UserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
+    }
+
+    /**
+     * @return Collection|ResultsGame[]
+     */
+    public function getResultsGames(): Collection
+    {
+        return $this->resultsGames;
+    }
+
+    public function addResultsGame(ResultsGame $resultsGame): self
+    {
+        if (!$this->resultsGames->contains($resultsGame)) {
+            $this->resultsGames[] = $resultsGame;
+            $resultsGame->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeResultsGame(ResultsGame $resultsGame): self
+    {
+        if ($this->resultsGames->removeElement($resultsGame)) {
+            // set the owning side to null (unless already changed)
+            if ($resultsGame->getUser() === $this) {
+                $resultsGame->setUser(null);
+            }
+        }
+
+        return $this;
     }
 }
