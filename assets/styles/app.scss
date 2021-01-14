@@ -83,16 +83,50 @@
         flex-direction: column;
         justify-content: space-around;
     }
-    .choixDessus {
+    //.choixDessus {
+    //    display: flex;
+    //    flex-direction: row;
+    //    width: 50%;
+    //    height: 200px;
+    //}
+    //.choixDessous {
+    //    display: flex;
+    //    flex-direction: row;
+    //    height: 200px;
+    //    width: 50%;
+    //}
+    //.choixMilieu {
+    //    padding-top: 20px;
+    //    padding-bottom: 20px;
+    //    width: 50%;
+    //    margin: auto;
+    //    height: 200px;
+    //}
+    //.reponseChoice {
+    //    flex: 2;
+    //}
+    .list-group {
         display: flex;
         flex-direction: row;
+        flex: 2;
+        height: 300px;
     }
-    .choixDessous {
-        display: flex;
-        flex-direction: row;
+    .list-group-item.list-group-item-action {
+        margin-left: 40px;
     }
-    .choixMilieu {
-        padding-top: 20px;
-        padding-bottom: 20px;
+    .reponseChoice {
+        padding-top: 80px;
     }
+
+
+}
+
+/*Login*/
+.login-form {
+    text-align: center;
+}
+
+.btn-signin {
+    margin: auto;
+
 }
