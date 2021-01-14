@@ -14,3 +14,15 @@ const $ = require('jquery');
 // this "modifies" the jquery module: adding behavior to it
 // the bootstrap module doesn't export/return anything
 require('bootstrap');
+
+    document.getElementById('soundBtn').style.visibility='hidden';
+
+    function performSound(){
+    var soundButton = document.getElementById("soundBtn");
+    soundButton.click();
+}
+
+    function playSound() {
+    const audio = new Audio("/assets/sounds/exploration-wind.wav");
+    audio.play();
+}
