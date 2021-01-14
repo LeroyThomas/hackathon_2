@@ -15,13 +15,11 @@ const $ = require('jquery');
 require('bootstrap');
 
 // Timer start
-const startingMinutes = 1;
+const startingMinutes = 0.3;
 let time = startingMinutes * 60;
 
 const countdownEl = document.getElementById('timer');
 
-const buttons = document.getElementById('btn-start');
-buttons.addEventListener('click', function() {
     let x = setInterval(updateCountdown, 1000);
 
     function updateCountdown() {
@@ -35,7 +33,7 @@ buttons.addEventListener('click', function() {
         if (minutes <= 0 && seconds <= 0) {
             clearInterval(x);
             document.getElementById("timer").innerHTML = "<span style='color: red'>Too late !</span>";
+            document.location.href="http://127.0.0.1:8000/result"
         }
     }
-});
 //Timer End
