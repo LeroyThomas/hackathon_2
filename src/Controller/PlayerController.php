@@ -6,13 +6,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Answer;
+use App\Entity\Question;
 
 class PlayerController extends AbstractController
 {
     /**
-     * @Route("/player", name="player")
+     * @Route("/player/{id}", name="player", methods={"GET"})
      */
-    public function showAnswersChoice(): Response
+    public function showAnswersChoice(Question $question): Response
     {
         $repository = $this->getDoctrine()
             ->getRepository(Answer::class);
@@ -25,7 +26,8 @@ class PlayerController extends AbstractController
 
         return $this->render('Player/player.html.twig', [
             'controller_name' => 'PlayerController',
-            'randAnswers' => $randAnswers
+            'randAnswers' => $randAnswers,
+            'question' => $question
         ]);
     }
 }

@@ -12,7 +12,7 @@
                 <div class="col-sm-6">
                     <div class="card-body" id="cardBodyPlayer">
                         <h5 class="card-header">Question </h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <p class="card-text">{{ question.title }}</p>
                     </div>
                 </div>
             </div>
@@ -20,7 +20,7 @@
         <div class="reponseChoice">
             <div class="list-group">
                 {% for answer in randAnswers %}
-                <a href="#" class="list-group-item list-group-item-action">{{ answer.titlegit }}</a>
+                <a href="#" class="list-group-item list-group-item-action">{{ answer.title }}</a>
                 {% endfor %}
             </div>
         </div>
