@@ -34,7 +34,7 @@ buttons.addEventListener('click', function() {
 
         if (minutes <= 0 && seconds <= 0) {
             clearInterval(x);
-            document.getElementById("timer").innerHTML = "TO LATE !";
+            document.getElementById("timer").innerHTML = "<span style='color: red'>Too late !</span>";
         }
     }
 });
