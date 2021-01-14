@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Question;
 use App\Form\QuestionType;
 use App\Repository\QuestionRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Pusher\Pusher;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Component\HttpFoundation\Request;
@@ -51,12 +52,17 @@ class HomeController extends AbstractController
      * @Route("/start-game", name="start_game", methods={"POST"})
      * @param Pusher $pusher
      * @param QuestionRepository $questionRepository
+     * @param EntityManagerInterface $entityManager
      * @return Response
+     * @throws \Doctrine\DBAL\Exception
      * @throws \Doctrine\ORM\NonUniqueResultException
      * @throws \Pusher\PusherException
      */
-    public function startGame(Pusher $pusher, QuestionRepository $questionRepository): Response
+    public function startGame(Pusher $pusher, QuestionRepository $questionRepository, EntityManagerInterface $entityManager): Response
     {
+        $connection = $entityManager->getConnection();
+        $platform = $connection->getDatabasePlatform();
+        $connection->executeStatement($platform->getTruncateTableSQL('results_game', true));
         $question = $questionRepository->createQueryBuilder('q')
             ->orderBy('RAND()')
             ->setMaxResults(1)
