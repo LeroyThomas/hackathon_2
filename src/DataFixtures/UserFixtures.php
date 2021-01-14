@@ -3,12 +3,12 @@
 
 namespace App\DataFixtures;
 
-use App\Entity\Player;
+use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
 
-class PlayerFixtures extends Fixture
+class UserFixtures extends Fixture
 {
     const PLAYERS = [
         "Titi",
@@ -22,8 +22,9 @@ class PlayerFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
         foreach (self::PLAYERS as $key => $playerName) {
-        $player = new Player();
+        $player = new User();
         $player->setName($playerName);
+        $player->setRoles(['ROLE_USER']);
 
         $manager->persist($player);
 
