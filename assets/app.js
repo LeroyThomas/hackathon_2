@@ -14,7 +14,7 @@ const $ = require('jquery');
 // the bootstrap module doesn't export/return anything
 require('bootstrap');
 
-    const myMusic = new sound("/build/sounds/exploration-wind.wav");
+    const myMusic = new sound("/build/sounds/music1.mp3");
     myMusic.play();
 
 function sound(src) {
