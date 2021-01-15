@@ -7,7 +7,7 @@
 }
 /*Accueil GameMaster*/
 body {
-    background-color: #006d77;
+    background-color: #a8dadc;
 }
 
 //timer
@@ -41,7 +41,7 @@ body {
 .card-body {
     padding-left: 30px;
     border: black solid;
-    background-color: #e76f51 ;
+    background-color: #f1faee ;
     margin-top: 50px;
 }
 
@@ -67,6 +67,7 @@ body {
         width: 300px;
         height: 400px;
         margin: 40px;
+        border-radius: 10px;
     }
     .createQuestion {
         padding-top: 0px;
