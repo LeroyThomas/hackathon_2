@@ -13,7 +13,11 @@
                     <div class="card-body" id="cardBodyPlayer">
                         <h5 class="card-header">Question </h5>
                         <p class="card-text">
-                            {{ question.title }}
+                            {% if results is not empty %}
+                            {{ results[0].question.title }}
+                            {% else %}
+                                personne n'a répondu
+                            {% endif %}
                         </p>
                     </div>
                 </div>
@@ -21,8 +25,9 @@
         </div>
         <div class="reponseChoice">
             <div class="list-group">
-                {% for %}
-                <div class="list-group-item list-group-item-action">Reponse Joueur 1</div>
+                {% for result in results %}
+                <div class="list-group-item list-group-item-action">{{ result.answer.title }}</div>
+                {% endfor %}
             </div>
         </div>
     </div>
