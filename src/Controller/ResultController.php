@@ -17,8 +17,7 @@ class ResultController extends AbstractController
 {
     /**
      * @Route("/result", name="result", methods={"GET"})
-     * @param Question $question
-     * @param Answer $answer
+     * @param ResultsGameRepository $resultsGameRepository
      * @return Response
      */
     public function index(ResultsGameRepository $resultsGameRepository): Response

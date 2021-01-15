@@ -6,14 +6,22 @@
     <div class="title">
         <h1>The Wildest Match </h1>
     </div>
+
+    <div class="container">
+        <a href="{{ path('home') }}"><img src="{{  asset('build/logo.png') }}" id="image" class="center">
+            <div class="overlay">
+                <div class="text">Play again !</div>
+            </div>
+        </a>
+    </div>
+
     <div class="flex-row justify-content-center">
-        <div class="card col-3 mx-auto">
-            The winner is : {{ winner.name }}
+        <div class="card col-3 mx-auto" id="textWinner">
+            <h1 id="titleWinner">The winner is : {{ winner.name }}</h1>
         </div>
     </div>
-    <div class="mt-5 flex-row justify-content-center text-center">
-        <div class="card col-3 mx-auto">
-            <a href="{{ path('home') }}">retour</a>
-        </div>
-    </div>
+{#    <div class="buttonLogo">#}
+{#        <a href="{{ path('home') }}"><img src="{{  asset('build/logo.png') }}" width="20%" height="20%"></a>#}
+{#    </div>#}
+
 {% endblock %}

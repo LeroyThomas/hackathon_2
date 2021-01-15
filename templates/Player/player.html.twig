@@ -13,7 +13,7 @@
                 <div class="col-sm-6">
                     <div class="card-body" id="cardBodyPlayer">
                         <h5 class="card-header">Question </h5>
-                        <p class="card-text">{{ question.title }}</p>
+                        <p class="card-text" id="questionTitle"><h5><strong>{{ question.title }}</strong></h5></p>
                     </div>
                 </div>
             </div>
@@ -21,8 +21,10 @@
         <div class="reponseChoice">
             <div class="list-group">
                 {% for answer in randAnswers %}
-                    <a href="{{ path('player_result', {userId:app.user.id, questionId:question.id, answerId:answer.id}) }}" id="playerAnswer" class="list-group-item list-group-item-action">{{ answer.title }}</a>
-                    <hr>
+                    <a href="{{ path('player_result', {userId:app.user.id, questionId:question.id, answerId:answer.id}) }}" id="playerAnswer" class="list-group-item list-group-item-action">
+                        <h6><strong>{{ answer.title }}</strong></h6>
+                        <hr>
+                    </a>
                 {% endfor %}
             </div>
         </div>
