@@ -15,7 +15,7 @@ const $ = require('jquery');
 require('bootstrap');
 
 // Timer start
-const startingMinutes = 0.3;
+const startingMinutes = 0.2;
 let time = startingMinutes * 60;
 
 const countdownEl = document.getElementById('timer');
