@@ -26,7 +26,10 @@
         <div class="reponseChoice">
             <div class="list-group">
                 {% for result in results %}
-                <div class="list-group-item list-group-item-action">{{ result.answer.title }}</div>
+                <div class="list-group-item list-group-item-action">
+                    {{ result.answer.title }}
+                    {{ result.user.name }}
+                </div>
                 {% endfor %}
             </div>
         </div>

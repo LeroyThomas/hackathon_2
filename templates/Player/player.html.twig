@@ -31,23 +31,6 @@
     </div>
 </div>
 {% endblock %}
-{#{% block javascripts %}#}
-{#    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>#}
-{#    <script src="https://js.pusher.com/7.0/pusher.min.js"></script>#}
-{#    <script>#}
-{#        const pusher = new Pusher('ad51b741b37252cba3b1', {#}
-{#            cluster: 'eu'#}
-{#        });#}
-{#        const channel = pusher.subscribe('general');#}
-{#        channel.bind('selectAnswer', function(answerid) {#}
-{#            let url = "{{ path('result', {id:"_answerid_"})}}";#}
-{#            window.location.assign(url.replace("_answerid_", answerid));#}
-{#        });#}
-{#        $('#playerAnswer').click(function () {#}
-{#            $.post("{{ path('start_game') }}");#}
-{#        });#}
-{#    </script>#}
-{#{% endblock %}#}
 {% block javascripts %}
 {{ parent() }}
     <script>
