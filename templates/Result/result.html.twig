@@ -13,7 +13,11 @@
                     <div class="card-body" id="cardBodyPlayer">
                         <h5 class="card-header">Question </h5>
                         <p class="card-text">
+                            {% if results is not empty %}
                             {{ results[0].question.title }}
+                            {% else %}
+                                personne n'a répondu
+                            {% endif %}
                         </p>
                     </div>
                 </div>
