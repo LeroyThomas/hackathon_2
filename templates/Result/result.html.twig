@@ -32,3 +32,9 @@
         </div>
     </div>
 {% endblock %}
+
+{% block javascripts %}
+    <script>
+        setInterval(function(){ window.location.assign("{{ path('result') }}"); }, 1000)
+    </script>
+{% endblock %}
