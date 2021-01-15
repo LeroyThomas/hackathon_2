@@ -14,7 +14,7 @@
                         <h5 class="card-header">Question </h5>
                         <p class="card-text">
                             {% if results is not empty %}
-                            {{ results[0].question.title }}
+                                {{ results[0].question.title }}
                             {% else %}
                                 personne n'a répondu
                             {% endif %}
@@ -26,15 +26,15 @@
         <div class="reponseChoice">
             <div class="list-group">
                 {% for result in results %}
-                    <a href="{{ path('winner', {id: result.user.id}) }}">
                     <div class="list-group-item list-group-item-action" id="resultAnswer">
                         {{ result.answer.title }}
                         <div class="pseudo">
                             <hr>
-                            {{ result.user.name }}
+                            <a href="{{ path('winner', {id: result.user.id}) }}">
+                                {{ result.user.name }}
+                            </a>
                         </div>
                     </div>
-                     </a>
                 {% endfor %}
             </div>
         </div>
@@ -43,6 +43,8 @@
 
 {% block javascripts %}
     <script>
-        setInterval(function(){ window.location.assign("{{ path('result') }}"); }, 1000)
+        setInterval(function () {
+            window.location.assign("{{ path('result') }}");
+        }, 3000)
     </script>
 {% endblock %}
